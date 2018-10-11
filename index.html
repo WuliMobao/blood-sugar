@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>blood sugar</title>
+    <!-- 引入 echarts.js -->
+    <script src="echarts.js"></script>
+</head>
+<body>
+	<style>
+	body {
+		height:100%;
+		width: 100%;
+		margin: 0;
+		}
+	</style>
+    <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+	<div id="main" style="width:357px;height:346px;background-color:#F8F8F8;"></div>
+    <script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('main'),);
+
+        // 指定图表的配置项和数据
+
+option = {
+    color: ['#4ea397', '#22c3aa', '#7bd9a5'],
+    title: {
+        text: '血糖变化趋势（平均值）'
+    },
+    tooltip: {
+        trigger: 'axis',
+        axisPointer: {
+            type: 'cross',
+            crossStyle: {
+                color: '#999'
+            }
+        }
+    },
+    grid: {
+        left: '7%',
+        right: '3%',
+        top: '16%',
+        bottom: '7%',
+        containLabel: true
+    },
+    xAxis: [
+        {
+            type: 'category',
+            data: ['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月'],
+            axisPointer: {
+                type: 'shadow'
+            }
+        }
+    ],
+    yAxis: {
+        type: 'value',
+        name: '血糖（mmol/L）',
+        min: 3,
+        max: 10,
+        interval: 1.0
+    },
+    series: [
+        {
+            name:'血糖',
+            type:'line',
+            data:[5.9, 5.3, 3.9, 3.9, 3.8, 4.8, 7, 4.3, 5.7, 4, 4.8, 4]
+        }
+    ]
+};
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+    </script>
+</body>
+</html>
