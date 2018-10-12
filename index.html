@@ -94,7 +94,26 @@ option = {
         {
             name:'血糖',
             type:'line',
-            data:[5.9, 5.3, 3.9, 3.9, 3.8, 4.8, 7, 4.3, 5.7, 4, 4.8, 4]
+            data:[5.9, 5.3, 3.9, 3.9, 3.8, 4.8, 7, 4.3, 5.7, 4, 4.8, 4],
+			markArea: {
+                itemStyle: {
+                    color: 'rgb(225, 0, 0,0.4)'
+                },
+                label: {
+                    color: '#FFF',
+                    fontWeight: 'bolder',
+					fontSize: '12',
+                    position: 'insideLeft',
+                },
+                data: [ [{
+                    name: '标\n准\n血\n糖\n范\n围',
+                    yAxis: '3.9'
+                }, {
+                    yAxis: '6.1'
+                }], 
+                ],
+				silent: true
+            }
         }
     ]
 };
